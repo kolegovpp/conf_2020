@@ -1,0 +1,215 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Основные пакеты
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper, 10pt, oneside, hidelinks]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A,OT1]{fontenc}
+\usepackage{soulutf8} % дополнение к UTF8
+\usepackage[russian]{babel}
+% оформление полей страницы
+%\usepackage{geometry}
+%\geometry{verbose,a4paper,tmargin=2cm,bmargin=2cm,lmargin=2.5cm,rmargin=1.0cm}
+%
+\usepackage{indentfirst}
+\usepackage{graphicx,lscape}
+\usepackage{tabu}
+%\usepackage[small,centerlast,bf]{caption2}
+\usepackage[font={small}]{caption}
+\DeclareCaptionLabelFormat{viadot}{\textbf{\small #1 #2.}}
+\captionsetup{labelsep=space, labelformat=viadot}
+
+\usepackage[pdftex,unicode,bookmarks=false,colorlinks=false,pdfborder={0 0 0}]{hyperref}
+%\usepackage{bookmark}
+\usepackage{lastpage} % для вставки количества страниц
+\usepackage{needspace} % для запрета переноса страницы после слова Литература
+\usepackage{enumitem} % работа со списками (интервалы и т.п.)
+\usepackage{setspace} % для вертикального интервала между строк
+\usepackage{makeidx} % для индекса авторов
+
+%\usepackage{diss2018} % Стиль оформления
+%\usepackage{ulem} % Способы выделения текста
+%\usepackage{color} % для цветного выделения текста
+%\usepackage{sectsty} % Для изменения шрифта в главах
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Индексы GITа
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \usepackage{showidx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Пакеты для таблиц и рисунков
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs,array,tabularx}
+\usepackage{longtable}
+\usepackage{rotating} % поворот таблиц (и рисунков)
+\usepackage{multicol} % для набора текста в несколько колонок
+\usepackage{multirow} % для вертикального объединения ячеек в таблице
+\usepackage{dcolumn} % для выравнивания колонок в таблицах по десятичной точке
+\usepackage{float} % для удобного размещения рисунков \begin{figure}[H]
+\usepackage{wrapfig} % для обтекания текстом рисунка
+\usepackage{sidecap} % для side caption (размещение текста сбоку)
+\usepackage{subcaption} % Для дополнительной подписи к рисунку
+\sidecaptionvpos{figure}{c} % подпись сверху
+%\usepackage{svg} % работа с векторной графикой
+% \usepackage[off]{svg-extract} %работа с векторной графикой
+%\svgsetup{clean=true}
+% http://texdoc.net/texmf-dist/doc/latex/svg/svg.pdf мануал по пакету SVG
+\usepackage{etoolbox} % для подсчета рисунков и таблиц
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Пакеты символов
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{upgreek} % для ненаклонных греческих символов
+\usepackage{amsmath} % для неразрывного дефиса  \nobreakdash
+\usepackage{textcomp} % для исползьования символа градуса, лучше использовать $^\circ$
+%\usepackage{latexsym}
+\usepackage{wasysym} % промиле \permil0
+\usepackage{amssymb} % для символа \square
+\usepackage{relsize} % для увеличения размера формул в math mode
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Рисовка графики в латехе
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usepackage{ifthen}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Дополнительные команды
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{neisri2016}
+
+\makeindex
+
+\addto\captionsrussian{
+	\renewcommand*{\indexname}{ad}
+}
+
+
+
+% Сжимаем в некоторых местах строки чтобы не оставалось висячих строк
+\newdimen\origiwspc
+\origiwspc=\fontdimen2\font% original inter word space
+
+\newenvironment{changemargin}[2]{%
+	\begin{list}{}{%
+		\setlength{\topsep}{0pt}%
+		\setlength{\leftmargin}{#1}%
+		\setlength{\rightmargin}{#2}%
+		\setlength{\listparindent}{\parindent}%
+		\setlength{\itemindent}{\parindent}%
+		\setlength{\parsep}{\parskip}%
+		}
+%
+\item[]}{\end{list}}
+% для списков вида 1)
+\renewcommand{\labelenumi}{\theenumi)}
+\DeclareUnicodeCharacter{00A0}{ }
+\DeclareUnicodeCharacter{00A0}{ }
+\pagestyle{headings}
+
+%\newcommand{\dg}{\textdegree} % символ градуса
+\newcommand{\dg}{$^\circ$} % круг больше чем значек градуса (использовал в сборнике молодежки 201\usepackage{neisri2016}8 года)
+\newcommand{\rpm}{\raisebox{.2ex}{$\scriptstyle\pm$}} % символ плюс-минус маленький
+\newcommand{\rp}{\raisebox{.2ex}{$\scriptstyle + $}} % символ плюс-минус маленький
+\newcommand{\rs}[1]{\textup{\scriptsize #1}} % русские подписи в формуле
+\newcommand{\Na}{\multicolumn{1}{c}{\textup{---}}} % длинное тире в таблице
+
+%
+\newenvironment{singlefigure}{\begin{figure}}{\end{figure}}
+
+
+% В списке литературы номер ссылки через точку, а не в квадратных скобках
+\makeatletter
+\def\@biblabel#1{#1. }
+\makeatother
+
+\newcommand{\rasdel}[1]{\clearpage \hspace{1cm}\\
+\begin{center}\textbf{ \LARGE #1  }\end{center} \bigskip \bigskip \bigskip \normalsize
+  \addcontentsline{toc}{mmrotitle}{ \smallskip \\ \textbf{#1} \smallskip }}
+
+\newcommand{\rasdelL}[2]{\clearpage \hspace{1cm}\\
+\begin{center}\textbf{ \LARGE #1  }\end{center} \bigskip \bigskip \bigskip \normalsize
+  \addcontentsline{toc}{mmrotitle}{ \smallskip \\ \textbf{#2} \smallskip }}
+
+\newcommand{\rasdelR}[2]{\clearpage \hspace{1cm}\\
+\begin{center}\textbf{ \LARGE #1  }\end{center} \bigskip \bigskip \bigskip \normalsize
+  \addcontentsline{toc}{mmrotitle}{ \vspace{2cm} \bigskip \bigskip \smallskip \\ \textbf{#2} \smallskip }}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+%  НАЧАЛО ДОКУМЕНТА  %
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+\usefont{T2A}{cmr}{m}{n}
+\captionsetup[singlefigure]{name=Fig.}
+
+% hack for longtabu environment and odd-even page different caption
+\makeatletter
+\newbox\LT@oddhead
+\newbox\LT@evenhead
+\def\endoddhead{\LT@end@hd@ft\LT@oddhead}
+\def\endevenhead{\LT@end@hd@ft\LT@evenhead}
+\def\LT@head{\ifodd\c@page\LT@oddhead\else\LT@evenhead}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\maketitle
+\newpage
+\input{preface}
+
+%\pagestyle{empty}
+\pagestyle{plain}
+\newpage
+\tableofcontents
+
+\clearpage
+\newpage
+\pagestyle{plain}
+
+
+\rasdel{Геология и геофизика}
+ \input{authors/kolegov.tex}
+
+
+\rasdel{ Медицинские и экологические проблемы северных территорий}
+
+
+\rasdelL{Биоразнообразие и состояние экосистем \\[04pt]
+северных регионов}
+{Биоразнообразие и состояние экосистем северных регионов}
+
+
+\rasdelR{Вопросы истории \\[04pt]
+и~социально-экономического развития северных
+территорий}{Вопросы истории и~социально-экономического развития северных
+территорий}
+
+
+
+\clearpage
+\input{abbreviations}
+%
+
+%  \input{sponsors}
+
+\clearpage
+\addcontentsline{toc}{mmrochapter}{ \smallskip \\ \textbf{Авторский указатель} \smallskip }
+\printindex
+
+
+\clearpage
+\input{postface}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%
+%  КОНЕЦ ДОКУМЕНТА  %
+%%%%%%%%%%%%%%%%%%%%%

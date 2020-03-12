@@ -1,0 +1,252 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Стилевой файл для сборника материалов молодежной конференции
+% 'Научная молодежь - Северо-Востоку России' в СВКНИИ ДВО РАН
+% Магадан, 2014 г.
+% Создан на осовне стиля сборника mmro.sty
+% http://www.ccas.ru/voron/download/mmrosty.zip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ProvidesPackage{neisri2014}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Оформление титульного листа
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\maketitle}{%
+  \newpage
+  \begin{center}
+    \thispagestyle{empty}
+\begin{changemargin}{-2cm}{-2cm}
+\centering
+	\Large Федеральное государственное бюджетное учреждение науки \\
+    Северо-Восточный комплексный \\
+    научно-исследовательский институт им. Н.\,А.\,Шило \\
+	Дальневосточного отделения Российской академии наук
+	\end{changemargin}
+    \bigskip
+    \vfill
+    \LARGE Научная молодёжь --- Северо-Воcтоку России \\
+    \bigskip
+    \bigskip
+    \large Материалы VIII Межрегиональной конференции \\молодых учёных \\
+    (Магадан, 21--22 мая 2020\,г.)\\
+    \bigskip
+	Выпуск 8
+    \vfill
+    Магадан \\
+    2020 \normalsize
+  \end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Оформление загаловка статьи, добавление её в содержание
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\procTitle}[1]{\gdef\@procTitle{{#1}}}
+\newcommand{\procTitleII}[1]{\gdef\@procTitleII{{#1}}}
+\newcommand{\procEmail}[1]{\gdef\@procEmail{{#1}}}
+\newcommand{\procOrganization}[1]{\gdef\@procOrganization{{#1}}}
+\newcommand{\procCity}[1]{\gdef\@procCity{{#1}}}
+\newcommand{\procAuthor}[1]{\gdef\@procAuthor{{#1}}}
+
+\newcommand{\procOrganizationI}[1]{\gdef\@procOrganizationI{{#1}}}
+\newcommand{\procCityI}[1]{\gdef\@procCityI{{#1}}}
+\newcommand{\procAuthorI}[1]{\gdef\@procAuthorI{{#1}}}
+\newcommand{\procOrganizationII}[1]{\gdef\@procOrganizationII{{#1}}}
+\newcommand{\procCityII}[1]{\gdef\@procCityII{{#1}}}
+\newcommand{\procAuthorII}[1]{\gdef\@procAuthorII{{#1}}}
+
+\newcommand\typeTocAuthorTitle[2]{{\itshape #1}\\ #2}
+
+\newcommand{\makeProcTitleRazdel}{
+  %\vspace{2cm}
+  \begin{center}
+  \large\textbf{\@procTitle} \\
+  \medskip
+  \normalsize\textit{\@procAuthor} \\
+  \texttt{\@procEmail} \\
+  \@procOrganization, \@procCity
+  \end{center}
+  \addcontentsline{toc}{mmrotitle}{%
+      \typeTocAuthorTitle{\@procAuthor}{\@procTitle}}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \let\thefootnote\relax\footnote{\copyright \@procAuthor, 2016}
+
+}%
+
+\newcommand{\makeProcTitle}{
+  %\vspace{2cm}
+  \clearpage
+  \begin{center}
+  \large\textbf{\@procTitle} \\
+  \medskip
+  \normalsize\textit{\@procAuthor} \\
+  \texttt{\@procEmail} \\
+  \@procOrganization, \@procCity
+  \end{center}
+  \addcontentsline{toc}{mmrotitle}{%
+      \typeTocAuthorTitle{\@procAuthor}{\@procTitle}}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \let\thefootnote\relax\footnote{\copyright \@procAuthor, 2016}
+
+}%
+
+\newcommand{\makeProcTitleII}{
+  %\vspace{2cm}
+  \clearpage
+  \begin{center}
+  \large\textbf{\@procTitle} \\
+  \medskip
+  \normalsize\textit{\@procAuthorI$^1$, \@procAuthorII$^2$} \\
+  \texttt{\@procEmail} \\
+  $^1$\@procOrganizationI, \@procCityI \\
+  $^2$\@procOrganizationII, \@procCityII
+  \end{center}
+  \addcontentsline{toc}{mmrotitle}{%
+      \typeTocAuthorTitle{\@procAuthorI, \@procAuthorII}{\@procTitle}}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \let\thefootnote\relax\footnote{\copyright \@procAuthorI, \@procAuthorII, 2016}
+
+}%
+
+\newcommand{\makeProcTitleIII}{
+  %\vspace{2cm}
+  \clearpage
+  \begin{center}
+  \large\textbf{\@procTitle} \\
+  \medskip
+  \normalsize\textit{\@procAuthor} \\
+  \texttt{\@procEmail} \\
+  \@procOrganization, \@procCity
+  \end{center}
+  \addcontentsline{toc}{mmrotitle}{%
+      \typeTocAuthorTitle{\@procAuthor}{\@procTitleII}}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \let\thefootnote\relax\footnote{\copyright \@procAuthor, 2016}
+
+}%
+
+\newcommand{\makeProcTitleIIIRazdel}{
+  %\vspace{2cm}
+  \begin{center}
+  \large\textbf{\@procTitle} \\
+  \medskip
+  \normalsize\textit{\@procAuthor} \\
+  \texttt{\@procEmail} \\
+  \@procOrganization, \@procCity
+  \end{center}
+  \addcontentsline{toc}{mmrotitle}{%
+      \typeTocAuthorTitle{\@procAuthor}{\@procTitleII}}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \let\thefootnote\relax\footnote{\copyright \@procAuthor, 2016}
+
+}%
+
+\newcommand{\makeProcTitleIIII}{
+  %\vspace{2cm}
+  \clearpage
+  \begin{center}
+  \large\textbf{\@procTitle} \\
+  \medskip
+  \normalsize\textit{\@procAuthorI$^1$, \@procAuthorII$^2$} \\
+  \texttt{\@procEmail} \\
+  $^1$\@procOrganizationI, \@procCityI \\
+  $^2$\@procOrganizationII, \@procCityII
+  \end{center}
+  \addcontentsline{toc}{mmrotitle}{%
+      \typeTocAuthorTitle{\@procAuthorI, \@procAuthorII}{\@procTitleII}}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \let\thefootnote\relax\footnote{\copyright \@procAuthorI, \@procAuthorII, 2016}
+
+}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Оформление библиографии
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\BibAuthor#1{\emph{#1}}
+\def\BibTitle#1{#1}
+\def\BibUrl#1{{\small\url{#1}}}
+\def\BibHttp#1{{\small\url{http://#1}}}
+\def\BibFtp#1{{\small\url{ftp://#1}}}
+\def\typeBibItem{\small\sloppy}
+
+
+\renewenvironment{thebibliography}[1]
+{\needspace{4\baselineskip}\bigskip\textbf{{\bibname}\bigskip}%
+        \list{\@biblabel{\@arabic\c@enumiv}}{%
+            \settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin by 1ex%
+            \topsep=0pt\parsep=3pt\itemsep=0ex%
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}%
+        }%
+        \typeBibItem
+	  }{%
+        \def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}%
+        \endlist
+    }
+
+\newenvironment{thebibliographyA}[1]
+{\needspace{4\baselineskip}\bigskip\textbf{{Архивные источники}\bigskip}%
+        \list{\@biblabel{\@arabic\c@enumiv}}{%
+            \settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin by 1ex%
+            \topsep=0pt\parsep=3pt\itemsep=0ex%
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}%
+        }%
+        \typeBibItem
+	  }{%
+        \def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}%
+        \endlist
+    }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Оформление оглавления
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Смена Оглавления на Содержание. Простой вариант не проходит из-за пакета babel
+\addto\captionsrussian{%
+\renewcommand\contentsname{Содержание}}
+%
+%% вёрстка одного пункта оглавления
+\newcommand\l@mmrotitle{\smallskip\@dottedtocline{1}{0ex}{3ex}}
+\newcommand\l@mmrochapter{\thispagestyle{empty}\smallskip\@dottedtocline{1}{0ex}{3ex}}
+%
+% переопределение команды генерации оглавления
+\renewcommand\tableofcontents{%
+    \if@twocolumn\@restonecoltrue\onecolumn\else\@restonecolfalse\fi
+    \par{\normalfont\Large\bfseries \contentsname}\nopagebreak\par\bigskip
+    \def\@chapter@code{}%
+    \markboth{\contentsname}{\contentsname}%
+    \@starttoc{toc}%
+    \if@restonecol\twocolumn\fi
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Оформление алфавитного указателя авторов
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewenvironment{theindex}{%
+    %\if@twocolumn\@restonecolfalse\else\@restonecoltrue\fi
+    %\columnseprule \z@
+    %\columnsep 35\p@
+    %\twocolumn[{\normalfont\Large\bfseries Авторский указатель}\vskip2em]%
+    {\noindent\normalfont\Large\bfseries Авторский указатель}\vskip2em%
+    %\markboth{Авторский указатель}{Авторский указатель}%
+    %\parindent\z@
+    %\parskip\z@ \@plus .3\p@\relax
+    \flushleft
+    \let\item\@idxitem
+}{%
+   % \if@restonecol\onecolumn\else\clearpage\fi
+}
