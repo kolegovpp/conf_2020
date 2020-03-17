@@ -3,3 +3,4 @@
 *.idx
 *.aux
 *.toc
+/authors/source/*.*
