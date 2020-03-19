@@ -46,9 +46,11 @@
 \newcommand{\procCity}[1]{\gdef\@procCity{{#1}}}
 \newcommand{\procAuthor}[1]{\gdef\@procAuthor{{#1}}}
 
+\newcommand{\procEmailI}[1]{\gdef\@procEmailI{{#1}}}
 \newcommand{\procOrganizationI}[1]{\gdef\@procOrganizationI{{#1}}}
 \newcommand{\procCityI}[1]{\gdef\@procCityI{{#1}}}
 \newcommand{\procAuthorI}[1]{\gdef\@procAuthorI{{#1}}}
+\newcommand{\procEmailII}[1]{\gdef\@procEmailII{{#1}}}
 \newcommand{\procOrganizationII}[1]{\gdef\@procOrganizationII{{#1}}}
 \newcommand{\procCityII}[1]{\gdef\@procCityII{{#1}}}
 \newcommand{\procAuthorII}[1]{\gdef\@procAuthorII{{#1}}}
@@ -96,17 +98,23 @@
   \begin{center}
   \large\textbf{\@procTitle} \\
   \medskip
-  \normalsize\textit{\@procAuthorI$^1$, \@procAuthorII$^2$} \\
-  \texttt{\@procEmail} \\
-  $^1$\@procOrganizationI, \@procCityI \\
-  $^2$\@procOrganizationII, \@procCityII
+  \begin{multicols}{2}
+  \normalsize\textit{\@procAuthorI} \\
+  \texttt{\@procEmailI} \\
+  \@procOrganizationI, \@procCityI\\
+  \columnbreak
+  \normalsize\textit{\@procAuthorII} \\
+  \texttt{\@procEmailII} \\
+  \@procOrganizationII, \@procCityII
+  \end{multicols}
+
+
   \end{center}
   \addcontentsline{toc}{mmrotitle}{%
       \typeTocAuthorTitle{\@procAuthorI, \@procAuthorII}{\@procTitle}}
   \setcounter{figure}{0}
   \setcounter{table}{0}
   \let\thefootnote\relax\footnote{\copyright \@procAuthorI, \@procAuthorII, 2016}
-
 }%
 
 \newcommand{\makeProcTitleIII}{
