@@ -59,8 +59,8 @@
 %  Пакеты символов
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{upgreek} % для ненаклонных греческих символов
-\usepackage{amsmath} % для неразрывного дефиса  \nobreakdash
-\usepackage{textcomp} % для исползьования символа градуса, лучше использовать $^\circ$
+\usepackage{amsmath, amsfonts} % для неразрывного дефиса  \nobreakdash , русские буквы в формулах через $$ $$
+\usepackage{textcomp} % для исползьования символа градуса, лучше использовать $^\circ$ а также промилле и других символов
 %\usepackage{latexsym}
 \usepackage{wasysym} % промиле \permil0
 \usepackage{amssymb} % для символа \square
@@ -173,7 +173,10 @@
 
 
 \rasdel{Геология и геофизика}
+\vspace{-10pt}
+ \input{authors/brynko.tex}
  \input{authors/kolegov.tex}
+ \input{authors/primenko.tex}
 
 \rasdel{Анализ и состояние объектов окружающей среды}
 \input{authors/nekiforov.tex}
@@ -197,6 +200,7 @@
  территорий}
 
 \input{authors/ismagilova.tex}
+\input{authors/zelencov.tex}
 
 \clearpage
 \input{abbreviations}
