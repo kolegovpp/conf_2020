@@ -3,4 +3,10 @@
 *.idx
 *.aux
 *.toc
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.rtf
 /authors/source/*.*
+authors/source/тезисы молодежка/*.*
