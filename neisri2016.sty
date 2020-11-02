@@ -53,6 +53,8 @@
 \newcommand{\procEmailII}[1]{\gdef\@procEmailII{{#1}}}
 \newcommand{\procOrganizationII}[1]{\gdef\@procOrganizationII{{#1}}}
 \newcommand{\procCityII}[1]{\gdef\@procCityII{{#1}}}
+\newcommand{\procOrganizationIV}[1]{\gdef\@procOrganizationIV{{#1}}}
+\newcommand{\procCityIV}[1]{\gdef\@procCityIV{{#1}}}
 \newcommand{\procAuthorII}[1]{\gdef\@procAuthorII{{#1}}}
 
 \newcommand\typeTocAuthorTitle[2]{{\itshape #1}\\ #2}
@@ -129,6 +131,31 @@
   \normalsize\textit{\@procAuthorII} \\
   \texttt{\@procEmailII} \\
   \@procOrganizationII, \@procCityII
+  \end{multicols}
+
+
+  \end{center}
+  \addcontentsline{toc}{mmrotitle}{%
+      \typeTocAuthorTitle{\@procAuthorI, \@procAuthorII}{\@procTitle}}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \let\thefootnote\relax\footnote{\copyright \@procAuthorI, \@procAuthorII, 2020}
+}%
+
+%У второго автора разделение организаций по городам - ВНИРО, Москва; СВГУ, магадан
+\newcommand{\makeProcTitleIVRazdel}{
+  %\vspace{2cm}
+  \begin{center}
+  \large\textbf{\@procTitle} \\
+  \medskip
+  \begin{multicols}{2}
+  \normalsize\textit{\@procAuthorI} \\
+  \texttt{\@procEmailI} \\
+  \@procOrganizationI, \@procCityI\\
+  \columnbreak
+  \normalsize\textit{\@procAuthorII} \\
+  \texttt{\@procEmailII} \\
+  \@procOrganizationII, \@procCityII; \@procOrganizationIV, \@procCityIV
   \end{multicols}
 
 
