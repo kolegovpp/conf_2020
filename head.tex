@@ -89,6 +89,7 @@
 \newdimen\origiwspc
 \origiwspc=\fontdimen2\font% original inter word space
 
+% Команда для изменения отступов
 \newenvironment{changemargin}[2]{%
 	\begin{list}{}{%
 		\setlength{\topsep}{0pt}%
@@ -116,6 +117,9 @@
 \newcommand{\textcenter}[1]{\begin{center}\vspace{-6pt} #1 \end{center}\vspace{-6pt}}
 
 \newenvironment{singlefigure}{\begin{figure}}{\end{figure}}
+
+
+
 
 
 % В списке литературы номер ссылки через точку, а не в квадратных скобках
@@ -183,8 +187,8 @@
 
 
 
-% \rasdel{ Медицинские и экологические проблемы северных территорий}
-
+ \rasdel{ Медицинские и экологические проблемы северных территорий}
+\input{authors/Abduraschidova.tex}
 
 \rasdelL{Биоразнообразие и состояние экосистем \\[04pt]
 северных регионов}
