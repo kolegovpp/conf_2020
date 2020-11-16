@@ -7,7 +7,7 @@
 \usepackage{soulutf8} % дополнение к UTF8
 \usepackage[russian]{babel}
 % оформление полей страницы
-%\usepackage{geometry}
+\usepackage{geometry}
 %\geometry{verbose,a4paper,tmargin=2cm,bmargin=2cm,lmargin=2.5cm,rmargin=1.0cm}
 %
 \usepackage{indentfirst}
@@ -72,6 +72,8 @@
 \usepackage{tikz}
 \usepackage{ifthen}
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Дополнительные команды
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -83,6 +85,26 @@
 	\renewcommand*{\indexname}{ad}
 }
 
+
+% Графика в тезисах Кондратьева М. Н.
+
+
+\pagestyle{myheadings}
+%\renewcommand{\captionlabeldelim}{\ }
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{shapes,arrows}
+
+\newcommand{\angl}{\tikz{\draw (0.1,0.18) -- (0,0) -- (0.1,0);}}
+%\newcommand{\dg}{\textdegree}
+
+\newcommand\Star[3][]{%
+\path[#1] (0  :#3) -- ( 36:#2)
+       -- (72 :#3) -- (108:#2)
+       -- (144:#3) -- (180:#2)
+       -- (216:#3) -- (252:#2)
+       -- (288:#3) -- (324:#2)--cycle;}
 
 
 % Сжимаем в некоторых местах строки чтобы не оставалось висячих строк
@@ -181,6 +203,7 @@
 \vspace{-10pt}
  \input{authors/brynko.tex}
  \input{authors/kolegov.tex}
+ \input{authors/kondratev.tex}
  \input{authors/mandzhieva.tex}
  \input{authors/morozova.tex}
  \input{authors/pozhidaeva.tex}
