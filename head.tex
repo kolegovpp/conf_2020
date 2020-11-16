@@ -85,27 +85,27 @@
 	\renewcommand*{\indexname}{ad}
 }
 
-
-% Графика в тезисах Кондратьева М. Н.
-
-
-\pagestyle{myheadings}
-%\renewcommand{\captionlabeldelim}{\ }
-\usetikzlibrary{shapes.geometric}
-\usetikzlibrary{plotmarks}
-\usetikzlibrary{decorations.pathreplacing}
-\usetikzlibrary{shapes,arrows}
-
-\newcommand{\angl}{\tikz{\draw (0.1,0.18) -- (0,0) -- (0.1,0);}}
-%\newcommand{\dg}{\textdegree}
-
-\newcommand\Star[3][]{%
-\path[#1] (0  :#3) -- ( 36:#2)
-       -- (72 :#3) -- (108:#2)
-       -- (144:#3) -- (180:#2)
-       -- (216:#3) -- (252:#2)
-       -- (288:#3) -- (324:#2)--cycle;}
-
+%
+% % Графика в тезисах Кондратьева М. Н.
+%
+%
+% \pagestyle{myheadings}
+% %\renewcommand{\captionlabeldelim}{\ }
+% \usetikzlibrary{shapes.geometric}
+% \usetikzlibrary{plotmarks}
+% \usetikzlibrary{decorations.pathreplacing}
+% \usetikzlibrary{shapes,arrows}
+%
+ \newcommand{\angl}{\tikz{\draw (0.1,0.18) -- (0,0) -- (0.1,0);}}
+% %\newcommand{\dg}{\textdegree}
+%
+% \newcommand\Star[3][]{%
+% \path[#1] (0  :#3) -- ( 36:#2)
+%        -- (72 :#3) -- (108:#2)
+%        -- (144:#3) -- (180:#2)
+%        -- (216:#3) -- (252:#2)
+%        -- (288:#3) -- (324:#2)--cycle;}
+%
 
 % Сжимаем в некоторых местах строки чтобы не оставалось висячих строк
 \newdimen\origiwspc
