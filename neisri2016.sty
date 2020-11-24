@@ -248,6 +248,31 @@
 
 }%
 
+% Для школьников
+
+\newcommand{\procSchool}[1]{\gdef\@procSchool{{#1}}}
+\newcommand{\procSuperviser}[1]{\gdef\@procSuperviser{{#1}}}
+\newcommand{\procSuperviserOrganization}[1]{\gdef\@procSuperviserOrganization{{#1}}}
+
+
+\newcommand{\makeProcTitleSchool}{
+  %\vspace{2cm}
+  \begin{center}
+  \large\textbf{\@procTitle} \\
+  \medskip
+  \normalsize\textit{\@procAuthor} \\
+  \@procSchool, \@procCity\\
+  Научный руководитель: \@procSuperviser (\@procSuperviserOrganization)\\
+  \texttt{\@procEmail} \\
+  \end{center}
+  \addcontentsline{toc}{mmrotitle}{\typeTocAuthorTitle{\@procAuthor}{\@procTitle}}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \let\thefootnote\relax\footnote{\copyright \@procAuthor, 2020}
+
+}%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Оформление библиографии
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
