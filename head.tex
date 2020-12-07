@@ -171,14 +171,17 @@
 
 \newcommand{\rasdel}[1]{\clearpage \hspace{1cm}\\
 \begin{center}\textbf{ \LARGE #1  }\end{center} \bigskip \bigskip \bigskip \normalsize
+  \phantomsection
   \addcontentsline{toc}{mmrotitle}{ \smallskip \\ \textbf{#1} \smallskip }}
 
 \newcommand{\rasdelL}[2]{\clearpage \hspace{1cm}\\
 \begin{center}\textbf{ \LARGE #1  }\end{center} \bigskip \bigskip \bigskip \normalsize
+  \phantomsection
   \addcontentsline{toc}{mmrotitle}{ \smallskip \\ \textbf{#2} \smallskip }}
 
 \newcommand{\rasdelR}[2]{\clearpage \hspace{1cm}\\
 \begin{center}\textbf{ \LARGE #1  }\end{center} \bigskip \bigskip \bigskip \normalsize
+  \phantomsection
   \addcontentsline{toc}{mmrotitle}{ \vspace{2cm} \bigskip \bigskip \smallskip \\ \textbf{#2} \smallskip }}
 
 
@@ -218,10 +221,12 @@
 \pagestyle{plain}
 
 \newpage
+\phantomsection
 \addcontentsline{toc}{mmrochapter}{ \smallskip \\ \textbf{В честь 60-летия СВКНИИ ДВО РАН} \smallskip }
 \input{authors/introdaction.tex}
 
 \rasdel{Геология и геофизика}
+
 \vspace{-10pt}
  \input{authors/brynko.tex}
  \input{authors/kolegov.tex}
@@ -235,6 +240,7 @@
  \input{authors/shibert.tex}
  \input{authors/yrysov.tex}
 
+\phantomsection
 \rasdel{Анализ и состояние объектов окружающей среды}
 \input{authors/erofeev.tex}
 \input{authors/zemlaykova-1.tex}
@@ -308,6 +314,7 @@
 %  \input{sponsors}
 
 \clearpage
+\phantomsection
 \addcontentsline{toc}{mmrochapter}{ \smallskip \\ \textbf{Авторский указатель} \smallskip }
 
 \printindex
