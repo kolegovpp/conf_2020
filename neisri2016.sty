@@ -42,6 +42,7 @@
 % Оформление загаловка статьи, добавление её в содержание
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\procTitle}[1]{\gdef\@procTitle{{#1}}}
+\newcommand{\procTitleNewLine}[1]{\gdef\@procTitleNewLine{{#1}}}
 \newcommand{\procTitleII}[1]{\gdef\@procTitleII{{#1}}}
 \newcommand{\procEmail}[1]{\gdef\@procEmail{{#1}}}
 \newcommand{\procOrganization}[1]{\gdef\@procOrganization{{#1}}}
@@ -96,6 +97,26 @@
   \let\thefootnote\relax\footnote{\copyright \@procAuthor, 2020}
 
 }%
+%Для названий с переносом строки, две отдельных команды: procTitle в оглавление и procTitleNewLine в тезисах
+\newcommand{\makeProcTitleNewLine}{
+  %\vspace{2cm}
+  \clearpage
+  \begin{center}
+  \large\textbf{\@procTitleNewLine} \\
+  \medskip
+  \normalsize\textit{\@procAuthor} \\
+  \texttt{\@procEmail} \\
+  \@procOrganization, \@procCity
+  \end{center}
+  \phantomsection
+  \addcontentsline{toc}{mmrotitle}{%
+      \typeTocAuthorTitle{\@procAuthor}{\@procTitle}}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \let\thefootnote\relax\footnote{\copyright \@procAuthor, 2020}
+
+}%
+
 
 \newcommand{\makeProcTitleII}{
   %\vspace{2cm}
