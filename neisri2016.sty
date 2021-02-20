@@ -62,6 +62,7 @@
 
 \newcommand\typeTocAuthorTitle[2]{{\itshape #1}\\ #2}
 
+
 \newcommand{\makeProcTitleRazdel}{
   %\vspace{2cm}
   \begin{center}
@@ -78,7 +79,23 @@
   \let\thefootnote\relax\footnote{\copyright \@procAuthor, 2020}
 
 }%
+%Для названий с переносом строки, две отдельных команды: procTitle в оглавление и procTitleNewLine в тезисах
+\newcommand{\makeProcTitleRazdelNewLine}{
+  %\vspace{2cm}
+  \begin{center}
+  \large\textbf{\@procTitleNewLine} \\
+  \medskip
+  \normalsize\textit{\@procAuthor} \\
+  \texttt{\@procEmail} \\
+  \@procOrganization, \@procCity
+  \end{center}
+  \phantomsection
+  \addcontentsline{toc}{mmrotitle}{\typeTocAuthorTitle{\@procAuthor}{\@procTitle}}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \let\thefootnote\relax\footnote{\copyright \@procAuthor, 2020}
 
+}%
 \newcommand{\makeProcTitle}{
   %\vspace{2cm}
   \clearpage
@@ -123,6 +140,31 @@
   \clearpage
   \begin{center}
   \large\textbf{\@procTitle} \\
+  \medskip
+  \begin{multicols}{2}
+  \normalsize\textit{\@procAuthorI} \\
+  \texttt{\@procEmailI} \\
+  \@procOrganizationI, \@procCityI\\
+  \columnbreak
+  \normalsize\textit{\@procAuthorII} \\
+  \texttt{\@procEmailII} \\
+  \@procOrganizationII, \@procCityII
+  \end{multicols}
+
+
+  \end{center}
+  \phantomsection
+  \addcontentsline{toc}{mmrotitle}{%
+      \typeTocAuthorTitle{\@procAuthorI, \@procAuthorII}{\@procTitle}}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \let\thefootnote\relax\footnote{\copyright \@procAuthorI, \@procAuthorII, 2020}
+}%
+\newcommand{\makeProcTitleIINewLine}{
+  %\vspace{2cm}
+  \clearpage
+  \begin{center}
+  \large\textbf{\@procTitleNewLine} \\
   \medskip
   \begin{multicols}{2}
   \normalsize\textit{\@procAuthorI} \\
