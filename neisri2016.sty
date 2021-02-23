@@ -262,6 +262,31 @@
   \setcounter{table}{0}
   \let\thefootnote\relax\footnote{\copyright \@procAuthorI, \@procAuthorII, 2020}
 }%
+\newcommand{\makeProcTitleIVNewLine}{
+  %\vspace{2cm}
+  \clearpage
+  \begin{center}
+  \large\textbf{\@procTitleNewLine} \\
+  \medskip
+  \begin{multicols}{2}
+  \normalsize\textit{\@procAuthorI} \\
+  \texttt{\@procEmailI} \\
+  \@procOrganizationI, \@procCityI\\
+  \columnbreak
+  \normalsize\textit{\@procAuthorII} \\
+  \texttt{\@procEmailII} \\
+  \@procOrganizationII, \@procCityII; \@procOrganizationIV, \@procCityIV
+  \end{multicols}
+
+
+  \end{center}
+  \phantomsection
+  \addcontentsline{toc}{mmrotitle}{%
+      \typeTocAuthorTitle{\@procAuthorI, \@procAuthorII}{\@procTitle}}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \let\thefootnote\relax\footnote{\copyright \@procAuthorI, \@procAuthorII, 2020}
+}%
 
 \newcommand{\makeProcTitleIII}{
   %\vspace{2cm}
